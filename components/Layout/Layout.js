@@ -13,11 +13,11 @@ function Layout({ children, title = "Crypto Currency Tracker" }) {
         <Link href="/" passHref>
           <a>
             <Image
-              height={200}
-              width={300}
+              height={150}
+              width={200}
               src="/crypto.jpg"
               alt="coin-logo"
-              layout="fixed"
+              
             />
           </a>
         </Link>
