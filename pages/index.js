@@ -1,16 +1,25 @@
 import axios from "axios";
-
+import { useState }from 'react';
 import Coins from "../components/Coins/Coins/Coins";
 import Layout from "../components/Layout/Layout";
 
 import SearchBar from "../components/SearchBar/SearchBar";
 
 export default function Home({ coinList }) {
+  const [search, setSearch] = useState('');
+
+  const coins = coinList.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
+
+  const changeHandler = e => {
+    e.preventDefault();
+    setSearch(e.target.value.toLowerCase());
+  }
+
   return (
     <Layout>
       <div className="coin_app">
-        <SearchBar type="text" placeholder="Search" />
-        <Coins filteredCoins={coinList} />
+        <SearchBar type="text" placeholder="Search" onChange={changeHandler} />
+        <Coins filteredCoins={coins} />
       </div>
     </Layout>
   );
