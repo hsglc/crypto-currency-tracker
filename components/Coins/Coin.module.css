@@ -1,0 +1,14 @@
+.coin_container {
+    display: flex;
+    justify-content: center;
+}
+
+.coin_row {
+    display: flex;
+    flex-direction: flex-start;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #2e2e2e;
+    width: 100%;
+    padding: .4rem 1.5rem;
+}

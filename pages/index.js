@@ -1,8 +1,11 @@
+import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
+import Coins from "../components/Coins/Coins/Coins";
+
 import SearchBar from "../components/SearchBar/SearchBar";
 
-export default function Home() {
+export default function Home({ coinList }) {
   return (
     <div>
       <Head>
@@ -15,6 +18,23 @@ export default function Home() {
       </Head>
 
       <SearchBar type="text" placeholder="Search" />
+      <Coins filteredCoins={coinList} />
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  // const coinList = await axios.get(
+
+  // );
+  const res = await fetch(
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false"
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      coinList: data,
+    },
+  };
+};
