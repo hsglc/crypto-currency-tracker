@@ -13,7 +13,7 @@ function Coins({
   return (
     <div className={classes.coin_container}>
       <div className={classes.coin_row}>
-        <div className="coin">
+        <div className={classes.coin}>
           <img src={image} alt={name} className={classes.coin_img} />
           <h1 className={classes.coin_h1}>{name}</h1>
           <p className={classes.coin_symbol}>{symbol}</p>
