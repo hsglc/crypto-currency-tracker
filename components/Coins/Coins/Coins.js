@@ -1,5 +1,6 @@
 import Coins from '../Coin';
 
+
 function CoinList({filteredCoins}) {
   
   return (

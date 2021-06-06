@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState }from 'react';
 import Coins from "../components/Coins/Coins/Coins";
-import Layout from "../components/Layout/Layout";
+
 
 import SearchBar from "../components/SearchBar/SearchBar";
 
@@ -16,12 +16,12 @@ export default function Home({ coinList }) {
   }
 
   return (
-    <Layout>
+    
       <div className="coin_app">
         <SearchBar type="text" placeholder="Search" onChange={changeHandler} />
         <Coins filteredCoins={coins} />
       </div>
-    </Layout>
+    
   );
 }
 
