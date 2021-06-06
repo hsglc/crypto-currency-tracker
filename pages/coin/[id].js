@@ -7,7 +7,7 @@ function Coin({ coin }) {
         <img src={coin.image.large} alt={coin.name} className={classes.coin_image}/>
         <h1 className={classes.coin_name}>{coin.name}</h1>
         <p className={classes.coin_ticker}>{coin.symbol}</p>
-        <p className={classes.coin_current}>{coin.market_data.current_price.usd}</p>
+        <p className={classes.coin_current}>${coin.market_data.current_price.usd}</p>
       </div>
     </div>
   );
