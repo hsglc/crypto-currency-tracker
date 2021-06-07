@@ -26,13 +26,11 @@ export default function Home({ coinList }) {
 }
 
 export const getServerSideProps = async () => {
-  // const coinList = await axios.get(
-
-  // );
-  const res = await fetch(
+  
+  const res = await axios(
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
   );
-  const data = await res.json();
+  const data = res.data;
 
   return {
     props: {

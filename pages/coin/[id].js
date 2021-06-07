@@ -1,4 +1,6 @@
 import classes from './Coin.module.css'
+import axios from "axios";
+
 
 function Coin({ coin }) {
   return (
@@ -18,9 +20,9 @@ export default Coin;
 export const getServerSideProps = async (ctx) => {
     const {id} = ctx.query;
 
-    const res = await fetch (`https://api.coingecko.com/api/v3/coins/${id}`)
+    const res = await axios(`https://api.coingecko.com/api/v3/coins/${id}`)
 
-    const coinData = await res.json();
+    const coinData = res.data;
 
     return {
         props : {
