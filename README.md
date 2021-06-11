@@ -1,7 +1,9 @@
 # Demo
 [Live](https://nextjs-crypto-currency-tracker.vercel.app/)
 
-## Getting Started
+## Description
+
+This is a nextjs crypto currency tracker app.
 
 First, run the development server:
 
